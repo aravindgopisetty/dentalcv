@@ -43,7 +43,7 @@ Upload this project folder plus `ToothNumber_TaskDataset.zip` to Colab, then run
 !mkdir -p data/raw
 !unzip -q ToothNumber_TaskDataset.zip -d data/raw
 !python scripts/prepare_dataset.py --force
-!python scripts/train.py --model yolo11m.pt --epochs 120 --imgsz 960 --batch 8 --device 0 --cache --name tooth-yolo11m-1024
+!python scripts/train.py --model yolo11m.pt --epochs 120 --imgsz 1024 --batch 6 --device 0 --cache --name tooth-yolo11m-1024
 ```
 
 If GPU memory is tight, drop to `--imgsz 896` or `--model yolo11s.pt`.
@@ -51,6 +51,27 @@ If GPU memory is tight, drop to `--imgsz 896` or `--model yolo11s.pt`.
 There is also a ready-to-open notebook at `notebooks/tooth_yolo_colab.ipynb`.
 
 To download the trained weights directly from Colab, use `scripts/download_model.py`.
+
+## Colab results
+
+Best run: `yolo11m.pt`, `120` epochs, `imgsz=1024`, `batch=6`
+
+- Validation precision: `0.9412`
+- Validation recall: `0.9357`
+- Validation mAP50: `0.9638`
+- Validation mAP50-95: `0.6745`
+- Test precision: `0.9389`
+- Test recall: `0.9498`
+- Test mAP50: `0.9698`
+- Test mAP50-95: `0.6589`
+
+Training curves:
+
+![Training curves](assets/training_results.png)
+
+Confusion matrix:
+
+![Confusion matrix](assets/confusion_matrix.png)
 
 ## Outputs
 
