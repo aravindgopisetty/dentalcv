@@ -1,0 +1,9 @@
+.venv/
+__pycache__/
+*.pyc
+
+data/raw/
+data/yolo/
+runs/
+yolo*.pt
+tooth-yolo-colab-bundle.zip
