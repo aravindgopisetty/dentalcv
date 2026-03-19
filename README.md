@@ -43,7 +43,7 @@ Upload this project folder plus `ToothNumber_TaskDataset.zip` to Colab, then run
 !mkdir -p data/raw
 !unzip -q ToothNumber_TaskDataset.zip -d data/raw
 !python scripts/prepare_dataset.py --force
-!python scripts/train.py --model yolo11m.pt --epochs 120 --imgsz 960 --batch 8 --device 0 --cache --name tooth-yolo11m-colab
+!python scripts/train.py --model yolo11m.pt --epochs 120 --imgsz 960 --batch 8 --device 0 --cache --name tooth-yolo11m-1024
 ```
 
 If GPU memory is tight, drop to `--imgsz 896` or `--model yolo11s.pt`.
