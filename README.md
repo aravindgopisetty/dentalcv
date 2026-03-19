@@ -1,6 +1,17 @@
 # Tooth Number Detection with YOLO
 
-This workspace is set up to train a YOLO detector on the dental tooth-numbering dataset in `data/raw`.
+This repository contains a complete YOLO11 workflow for tooth-number detection on panoramic dental images, including training, inference, trained weights, a short PDF report, and sample prediction outputs.
+
+## Submission contents
+
+- Source code (training + inference): [`scripts/`](scripts/), [`configs/`](configs/), [`notebooks/`](notebooks/)
+- Trained model weights: [`artifacts/best.pt`](artifacts/best.pt)
+- Short report (PDF): [`reports/approach_report.pdf`](reports/approach_report.pdf)
+- Sample outputs / predictions: [`sample_outputs/source/0ba65172-20240821-105924223.jpg`](sample_outputs/source/0ba65172-20240821-105924223.jpg), [`sample_outputs/predictions/0ba65172-20240821-105924223_pred.jpg`](sample_outputs/predictions/0ba65172-20240821-105924223_pred.jpg)
+
+Sample prediction:
+
+![Sample prediction](sample_outputs/predictions/0ba65172-20240821-105924223_pred.jpg)
 
 ## Recommended model
 
@@ -54,7 +65,7 @@ To download the trained weights directly from Colab, use `scripts/download_model
 
 ## Colab inference
 
-If your Colab session resets, you can still run inference by uploading `best.pt` and the image(s) you want to test:
+If your Colab session resets, you can still run inference by cloning the repo and uploading only the image(s) you want to test:
 
 ```python
 !git clone https://github.com/aravindgopisetty/dentalcv.git
@@ -62,10 +73,10 @@ If your Colab session resets, you can still run inference by uploading `best.pt`
 !pip install ultralytics pyyaml
 ```
 
-Upload `best.pt` and your test image in Colab, then run:
+Upload your test image in Colab, then run:
 
 ```python
-!python scripts/infer.py --weights /content/best.pt --source /content/test_image.jpg --device 0 --name colab-infer
+!python scripts/infer.py --weights artifacts/best.pt --source /content/test_image.jpg --device 0 --name colab-infer
 ```
 
 The rendered predictions will be saved under `runs/colab-infer/`.

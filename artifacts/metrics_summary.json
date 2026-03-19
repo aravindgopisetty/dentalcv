@@ -1,0 +1,26 @@
+{
+  "model": "yolo11m.pt",
+  "device": "0",
+  "save_dir": "/content/tooth-yolo/runs/tooth-yolo11m-1024",
+  "best_weights": "/content/tooth-yolo/runs/tooth-yolo11m-1024/weights/best.pt",
+  "val": {
+    "metrics/precision(B)": 0.9412432162721995,
+    "metrics/recall(B)": 0.9356782393618525,
+    "metrics/mAP50(B)": 0.9637660963583339,
+    "metrics/mAP50-95(B)": 0.6745025048229937,
+    "fitness": 0.6745025048229937,
+    "box_map": 0.6745025048229937,
+    "box_map50": 0.9637660963583339,
+    "box_map75": 0.7653888672529906
+  },
+  "test": {
+    "metrics/precision(B)": 0.9388606790813719,
+    "metrics/recall(B)": 0.949805712182282,
+    "metrics/mAP50(B)": 0.9698383890084349,
+    "metrics/mAP50-95(B)": 0.6589099958414024,
+    "fitness": 0.6589099958414024,
+    "box_map": 0.6589099958414024,
+    "box_map50": 0.9698383890084349,
+    "box_map75": 0.7445889775878547
+  }
+}
