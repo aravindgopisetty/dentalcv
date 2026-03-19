@@ -52,6 +52,24 @@ There is also a ready-to-open notebook at `notebooks/tooth_yolo_colab.ipynb`.
 
 To download the trained weights directly from Colab, use `scripts/download_model.py`.
 
+## Colab inference
+
+If your Colab session resets, you can still run inference by uploading `best.pt` and the image(s) you want to test:
+
+```python
+!git clone https://github.com/aravindgopisetty/dentalcv.git
+%cd /content/dentalcv
+!pip install ultralytics pyyaml
+```
+
+Upload `best.pt` and your test image in Colab, then run:
+
+```python
+!python scripts/infer.py --weights /content/best.pt --source /content/test_image.jpg --device 0 --name colab-infer
+```
+
+The rendered predictions will be saved under `runs/colab-infer/`.
+
 ## Colab results
 
 Best run: `yolo11m.pt`, `120` epochs, `imgsz=1024`, `batch=6`
