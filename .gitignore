@@ -7,3 +7,4 @@ data/yolo/
 runs/
 yolo*.pt
 tooth-yolo-colab-bundle.zip
+artifacts/*.zip
